@@ -10,8 +10,8 @@ def test_empty_whitelist_allows_everyone():
 
 
 def test_whitelist_by_id_and_username():
-    settings = make("123, @Axi_718")
+    settings = make("123, @some_user")
     assert settings.is_allowed(123, None)
-    assert settings.is_allowed(5, "axi_718")
+    assert settings.is_allowed(5, "some_user")
     assert not settings.is_allowed(5, "stranger")
     assert not settings.is_allowed(5, None)
